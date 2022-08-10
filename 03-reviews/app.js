@@ -37,3 +37,88 @@ const reviews = [
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
+
+let previousButton = document.querySelector('#previousButton');
+let nextButton = document.querySelector('#nextButton');
+let surpriseBtn = document.querySelector(".random-btn");
+let reviewImage = document.getElementById("person-img");
+let authorName = document.getElementById("author")
+let jobName = document.getElementById("job")
+let info = document.getElementById("info");
+
+let indexOfReviews = 0;
+const MAXINDEX = 3;
+
+// document.addEventListener("readystatechange", replaceReviewData); seems it perform same function as DOMContentLoaded
+
+document.addEventListener("DOMContentLoaded", replaceReviewData);
+
+// document.addEventListener("load", replaceReviewData); seems load does not perform any function
+
+nextButton.addEventListener("click", increaseButtonDisplay);
+previousButton.addEventListener("click", decreaseButtonDisplay);
+surpriseBtn.addEventListener("click", surpriseButtonDisplay);
+
+//function to increase index of array
+function indexIncrease(){
+  indexOfReviews++;
+
+  if (indexOfReviews >= reviews.length) {
+    indexOfReviews = 0;
+  }
+  return reviews[indexOfReviews];
+}
+
+//function to decrease array (reviews) index
+function indexDecrease(){
+  indexOfReviews--;
+
+  if (indexOfReviews < 0) {
+    indexOfReviews = MAXINDEX;
+  }
+  return reviews[indexOfReviews];
+}
+
+//function to get a random array index and review details
+function randomReview(){
+  indexOfReviews = Math.floor(Math.random() * reviews.length);
+
+  console.log(indexOfReviews);  
+  return reviews[indexOfReviews];
+
+}
+
+//function to change text content
+function replaceReviewData(){
+  authorName.textContent = reviews[indexOfReviews].name;
+  jobName.textContent = reviews[indexOfReviews].job;
+  info.textContent = reviews[indexOfReviews].text;
+  reviewImage.src = reviews[indexOfReviews].img;
+}
+
+//function to invoke change upon clicking increase  button
+function increaseButtonDisplay(){
+
+  indexIncrease();
+  replaceReviewData();
+
+}
+
+//function to invoke changes on decrease button
+function decreaseButtonDisplay(){
+
+  indexDecrease();
+  replaceReviewData();
+
+}
+
+//function to invoke changes on surprise button; gets random review and replaces detail
+function surpriseButtonDisplay(){
+
+  randomReview();
+  replaceReviewData();
+}
+
+
+
+
