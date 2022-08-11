@@ -79,7 +79,7 @@ function indexDecrease(){
   return reviews[indexOfReviews];
 }
 
-//function to get a random array index and review details
+//function to get a random array index and details of reviews
 function randomReview(){
   indexOfReviews = Math.floor(Math.random() * reviews.length);
 
@@ -99,7 +99,7 @@ function replaceReviewData(){
 //function to invoke change upon clicking increase  button
 function increaseButtonDisplay(){
 
-  indexIncrease();
+  indexIncrease();ck
   replaceReviewData();
 
 }
