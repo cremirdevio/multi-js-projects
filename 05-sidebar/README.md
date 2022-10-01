@@ -8,5 +8,6 @@ Key concepts covered:
 - addEventListener()
 - classList.toggle()
 - classList.remove()
+- translate CSS property
 
 Preview: <https://vanilla-js-basic-project-5-sidebar.netlify.app//>
