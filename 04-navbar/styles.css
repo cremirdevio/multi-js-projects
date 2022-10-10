@@ -202,9 +202,13 @@ nav {
   /* height: 0;
   overflow: hidden;
   transition: var(--transition); */
+  /* display: block; */
 }
 .show-links {
   height: 10rem;
+}
+.navbar-style {
+  transform: translate(0, -250px); 
 }
 @media screen and (min-width: 800px) {
   .nav-center {

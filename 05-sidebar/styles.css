@@ -171,6 +171,10 @@ Sidebar
 .sidebar-toggle:hover {
   color: var(--clr-primary-7);
 }
+.sidebar_slide {
+  transform: translateX(-380px);
+}
+
 @keyframes bounce {
   0% {
     transform: scale(1);
